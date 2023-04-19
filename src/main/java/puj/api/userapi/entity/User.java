@@ -5,6 +5,10 @@ import java.io.Serializable;
 import jakarta.persistence.*;
 import lombok.Data;
 
+/**
+ * Clase para modelar la entidad Usuario
+ * @Data Constructor, Getter y Setter de Lombok
+ */
 @Data
 @Entity
 @Table(name="user")
