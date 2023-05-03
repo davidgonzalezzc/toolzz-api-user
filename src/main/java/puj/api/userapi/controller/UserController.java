@@ -9,6 +9,7 @@ import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
 import lombok.extern.slf4j.Slf4j;
@@ -20,7 +21,6 @@ import puj.api.userapi.service.UserService;
  * mandarlas luego a los servicios
  */
 @RestController
-@CrossOrigin(origins={"http://localhost:4200","http://localhost:8089"})
 @Slf4j
 public class UserController {
 
@@ -32,6 +32,7 @@ public class UserController {
      * @return Retorna una lista de usuarios
      */
     @GetMapping("/user")
+    @CrossOrigin(origins = "http://localhost:4200")
     public List<User> listUsers(){
         log.info(userService.listUsers().toString());
         return userService.listUsers();
@@ -63,7 +64,8 @@ public class UserController {
      * @return Retorna el usuario creado
      */
     @PostMapping("/user")
-    public User createTool(User user){
+    @CrossOrigin(origins = "http://localhost:4200")
+    public User createTool(@RequestBody User user){
         return userService.createUser(user);
     }
     

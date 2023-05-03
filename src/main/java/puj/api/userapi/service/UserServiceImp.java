@@ -61,11 +61,12 @@ public class UserServiceImp implements UserService{
     @Override
     public User createUser(User user) {
         User newuser = new User();
-        user.setName(user.getName());
-        user.setLast(user.getLast());
-        user.setEmail(user.getEmail());
-        user.setRole(user.getRole());
-        user.setPassword(user.getPassword());
+        newuser.setName(user.getName());
+        newuser.setLast(user.getLast());
+        newuser.setEmail(user.getEmail());
+        newuser.setRole(user.getRole());
+        newuser.setPassword(user.getPassword());
+        newuser.setBirthday(user.getBirthday());
         userRepository.save(newuser);
         return newuser;
     }
