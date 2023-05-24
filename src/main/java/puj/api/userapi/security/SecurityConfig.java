@@ -6,7 +6,9 @@ import org.springframework.security.config.Customizer;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
 import org.springframework.security.web.SecurityFilterChain;
-
+/***
+ * Clase de configuración CORS
+ */
 @Configuration
 @EnableWebSecurity
 public class SecurityConfig {
